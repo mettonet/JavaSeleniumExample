@@ -1,6 +1,7 @@
 package pages;
 
-import org.junit.Assert;
+
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.BaseFunctions;
@@ -34,45 +35,45 @@ public class HomePage extends BaseFunctions {
     public void getTabTitle(){
         tabTitle = driver.getTitle();
         System.out.println("Sekme başlığı: "+tabTitle);
-        Assert.assertEquals(tabTitle,"Login example page to test the PHP MySQL online system");
+        Assertions.assertEquals(tabTitle,"Login example page to test the PHP MySQL online system");
     }
 
     public void getPageTitle(){
         pageTitle =  driver.findElement(By.xpath(pageTitle)).getText();
         System.out.println("Sayfa başlığı: "+ pageTitle);
-        Assert.assertEquals(pageTitle,"4. Login");
+        Assertions.assertEquals(pageTitle,"4. Login");
     }
 
     public void getStatusMessage(){
         statusMessageTxt =  driver.findElement(By.xpath(statusMessage)).getText();
         System.out.println("Statü mesajı: "+ statusMessageTxt);
-        Assert.assertEquals(statusMessageTxt,"**No login attempted**");
+        Assertions.assertEquals(statusMessageTxt,"**No login attempted**");
 
     }
 
     public void getStatusMessageColor(){
         statusMessageColorAttribute = driver.findElement(By.xpath(statusMessageColorAttribute)).getAttribute("color");
         System.out.println("Statü color değeri: "+ statusMessageColorAttribute);
-        Assert.assertEquals(statusMessageColorAttribute,"#ff8000");
+        Assertions.assertEquals(statusMessageColorAttribute,"#ff8000");
     }
 
     public void getPageInformationMessage(){
         pageInformationMessage =  driver.findElement(By.xpath(pageInformationMessage)).getText();
         System.out.println("Sayfa bilgi mesajı: "+ pageInformationMessage);
-        Assert.assertEquals(pageInformationMessage,"Enter your login details you added on the previous page and test the login.\n" +
+        Assertions.assertEquals(pageInformationMessage,"Enter your login details you added on the previous page and test the login.\n" +
                 "The success or failure will be shown above.");
     }
 
     public void getUsernameLabel(){
         usernameLabel =  driver.findElement(By.xpath(usernameLabel)).getText();
         System.out.println("Kullanıcı adı giriş alanı adı: "+ usernameLabel);
-        Assert.assertEquals(usernameLabel,"Username:");
+        Assertions.assertEquals(usernameLabel,"Username:");
     }
 
     public void getPasswordLabel(){
         passwordLabel =  driver.findElement(By.xpath(passwordLabel)).getText();
         System.out.println("Şifre giriş alanı adı: "+ passwordLabel);
-        Assert.assertEquals(passwordLabel,"Password:");
+        Assertions.assertEquals(passwordLabel,"Password:");
     }
 
     public void failedLogin(){
@@ -81,7 +82,7 @@ public class HomePage extends BaseFunctions {
         driver.findElement(By.xpath(loginButton)).click();
         wait(1000);
         statusMessageTxt =  driver.findElement(By.xpath(statusMessage)).getText();
-        Assert.assertEquals(statusMessageTxt,"**Failed Login**");
+        Assertions.assertEquals(statusMessageTxt,"**Failed Login**");
     }
 
     public void successfulLogin(){
@@ -90,6 +91,6 @@ public class HomePage extends BaseFunctions {
         driver.findElement(By.xpath(loginButton)).click();
         wait(1000);
         statusMessageTxt =  driver.findElement(By.xpath(statusMessage)).getText();
-        Assert.assertEquals(statusMessageTxt,"**Successful Login**");
+        Assertions.assertEquals(statusMessageTxt,"**Successful Login**");
     }
 }

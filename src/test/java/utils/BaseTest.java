@@ -1,19 +1,18 @@
 package utils;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import pages.HomePage;
 
 public class BaseTest {
 
-    public WebDriver driver;
+    public static WebDriver driver;
     public static String browserName = null;
 
-    @Before
+    @BeforeEach
     public void setUpTest(){
         String projectPath = System.getProperty("user.dir");
         PropertiesFile.getProperties();
@@ -32,13 +31,7 @@ public class BaseTest {
         }
     }
 
-
-
-
-
-
-
-    @After
+    @AfterEach
     public void tearDown() {
         //quit driver
         driver.quit();
