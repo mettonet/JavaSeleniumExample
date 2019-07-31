@@ -9,8 +9,7 @@ import utils.BaseFunctions;
 
 public class HomePage extends BaseFunctions {
 
-    private WebDriver driver;
-    private String testUrl = "http://thedemosite.co.uk/login.php";
+
     private String tabTitle  = null;
     private String pageTitle = "//p/big/strong";
     private String statusMessage = "//blockquote/font/center/b";
@@ -25,11 +24,11 @@ public class HomePage extends BaseFunctions {
 
 
     public HomePage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public void goToHomePage(){
-        driver.get(testUrl);
+        navigate(testUrl);
     }
 
     public void getTabTitle(){

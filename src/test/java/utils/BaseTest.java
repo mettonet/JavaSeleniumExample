@@ -7,10 +7,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.Properties;
+
 public class BaseTest {
 
     public static WebDriver driver;
     public static String browserName = null;
+    public static String testUrl = null;
 
     @BeforeEach
     public void setUpTest(){
