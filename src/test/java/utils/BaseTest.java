@@ -6,14 +6,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Properties;
 
 public class BaseTest {
 
-    public static WebDriver driver;
-    public static String browserName = null;
-    public static String testUrl = null;
+    protected static WebDriver driver;
+    protected WebDriverWait wait;
+    protected static String browserName = null;
+    protected static String testUrl = null;
 
     @BeforeEach
     public void setUpTest(){
@@ -39,5 +41,6 @@ public class BaseTest {
         //quit driver
         driver.quit();
     }
+
 
 }

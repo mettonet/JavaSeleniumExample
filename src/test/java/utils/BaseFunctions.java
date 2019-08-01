@@ -1,6 +1,8 @@
 package utils;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class BaseFunctions extends BaseTest{
 
@@ -20,5 +22,12 @@ public class BaseFunctions extends BaseTest{
             e.printStackTrace();
         }
     }
+
+    public WebElement find(By by){
+        WebElement element = driver.findElement(by);
+        return element;
+    }
+
+
 
 }

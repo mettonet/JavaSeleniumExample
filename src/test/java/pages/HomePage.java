@@ -38,39 +38,39 @@ public class HomePage extends BaseFunctions {
     }
 
     public void getPageTitle(){
-        pageTitle =  driver.findElement(By.xpath(pageTitle)).getText();
+        pageTitle =  find(By.xpath(pageTitle)).getText();
         System.out.println("Sayfa başlığı: "+ pageTitle);
         Assertions.assertEquals(pageTitle,"4. Login");
     }
 
     public void getStatusMessage(){
-        statusMessageTxt =  driver.findElement(By.xpath(statusMessage)).getText();
+        statusMessageTxt =  find(By.xpath(statusMessage)).getText();
         System.out.println("Statü mesajı: "+ statusMessageTxt);
         Assertions.assertEquals(statusMessageTxt,"**No login attempted**");
 
     }
 
     public void getStatusMessageColor(){
-        statusMessageColorAttribute = driver.findElement(By.xpath(statusMessageColorAttribute)).getAttribute("color");
+        statusMessageColorAttribute = find(By.xpath(statusMessageColorAttribute)).getAttribute("color");
         System.out.println("Statü color değeri: "+ statusMessageColorAttribute);
         Assertions.assertEquals(statusMessageColorAttribute,"#ff8000");
     }
 
     public void getPageInformationMessage(){
-        pageInformationMessage =  driver.findElement(By.xpath(pageInformationMessage)).getText();
+        pageInformationMessage =  find(By.xpath(pageInformationMessage)).getText();
         System.out.println("Sayfa bilgi mesajı: "+ pageInformationMessage);
         Assertions.assertEquals(pageInformationMessage,"Enter your login details you added on the previous page and test the login.\n" +
                 "The success or failure will be shown above.");
     }
 
     public void getUsernameLabel(){
-        usernameLabel =  driver.findElement(By.xpath(usernameLabel)).getText();
+        usernameLabel =  find(By.xpath(usernameLabel)).getText();
         System.out.println("Kullanıcı adı giriş alanı adı: "+ usernameLabel);
         Assertions.assertEquals(usernameLabel,"Username:");
     }
 
     public void getPasswordLabel(){
-        passwordLabel =  driver.findElement(By.xpath(passwordLabel)).getText();
+        passwordLabel =  find(By.xpath(passwordLabel)).getText();
         System.out.println("Şifre giriş alanı adı: "+ passwordLabel);
         Assertions.assertEquals(passwordLabel,"Password:");
     }
@@ -89,7 +89,7 @@ public class HomePage extends BaseFunctions {
         driver.findElement(By.xpath(passwordInput)).sendKeys("testpass");
         driver.findElement(By.xpath(loginButton)).click();
         wait(1000);
-        statusMessageTxt =  driver.findElement(By.xpath(statusMessage)).getText();
+        statusMessageTxt =  find(By.xpath(statusMessage)).getText();
         Assertions.assertEquals(statusMessageTxt,"**Successful Login**");
     }
 }
