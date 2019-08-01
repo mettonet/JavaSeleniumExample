@@ -76,18 +76,18 @@ public class HomePage extends BaseFunctions {
     }
 
     public void failedLogin(){
-        driver.findElement(By.xpath(usernameInput)).sendKeys("testuser1");
-        driver.findElement(By.xpath(passwordInput)).sendKeys("testpass1");
-        driver.findElement(By.xpath(loginButton)).click();
+        find(By.xpath(usernameInput)).sendKeys("testuser1");
+        find(By.xpath(passwordInput)).sendKeys("testpass1");
+        find(By.xpath(loginButton)).click();
         wait(1000);
-        statusMessageTxt =  driver.findElement(By.xpath(statusMessage)).getText();
+        statusMessageTxt =  find(By.xpath(statusMessage)).getText();
         Assertions.assertEquals(statusMessageTxt,"**Failed Login**");
     }
 
     public void successfulLogin(){
-        driver.findElement(By.xpath(usernameInput)).sendKeys("testuser");
-        driver.findElement(By.xpath(passwordInput)).sendKeys("testpass");
-        driver.findElement(By.xpath(loginButton)).click();
+        find(By.xpath(usernameInput)).sendKeys("testuser");
+        find(By.xpath(passwordInput)).sendKeys("testpass");
+        find(By.xpath(loginButton)).click();
         wait(1000);
         statusMessageTxt =  find(By.xpath(statusMessage)).getText();
         Assertions.assertEquals(statusMessageTxt,"**Successful Login**");
