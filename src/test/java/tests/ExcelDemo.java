@@ -6,12 +6,13 @@ import pages.ExcelUtils;
 public class ExcelDemo {
 
     @Test
-    public void readExcel(){
+    public void readExcel() throws Exception {
         String path = System.getProperty("user.dir");
-        ExcelUtils excelUtils = new ExcelUtils(path+"/rapor.xlsx","Sheet1");
+        //ExcelUtils excelUtils = new ExcelUtils(path+"/rapor.xlsx","Sheet1");
 
-        excelUtils.getRowCount();
-        excelUtils.getCellDataString(1,0);
-        excelUtils.getCellDataNumber(1,1);
+        //excelUtils.getRowCount();
+        //excelUtils.getCellDataNumber(1,1);
+        //excelUtils.setCellData();
+       //excelUtils.getCellDataString(1,0);
     }
 }
